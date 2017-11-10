@@ -1,5 +1,4 @@
 const path = require('path');
-const webpack = require('webpack');
 
 // copy manifest.json to the path: 'public/build'
 // this will allow for the authRequest to see the file at www.example.com/manifest.json
@@ -21,11 +20,15 @@ const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
 });
 
 module.exports = {
-  entry: './src/index.js',
+  entry: './src/index.jsx',
   target: 'web',
   output: {
     path: path.resolve('public/build'),
     filename: 'index_bundle.js',
+  },
+  resolve: {
+    modules: ['node_modules', path.resolve(__dirname, 'src')],
+    extensions: ['.js', '.jsx', '.json', '.css'],
   },
   devServer: {
     historyApiFallback: true,

@@ -19,6 +19,7 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
+    "ajv": "^5.3.0",
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.0.1",
     "babel-loader": "^6.4.1",
@@ -53,8 +54,9 @@
     "webpack-dev-server": "^2.4.2"
   },
   "dependencies": {
-    "blockstack": "^0.11.0",
+    "blockstack": "^0.13.4",
     "bootstrap": "^3.3.7",
+    "prop-types": "^15.6.0",
     "react": "^15.5.4",
     "react-dom": "^15.5.4"
   }

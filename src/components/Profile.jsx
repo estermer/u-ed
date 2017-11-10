@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
 import { isSignInPending, loadUserData, Person } from 'blockstack';
 
@@ -39,10 +40,10 @@ export default class Profile extends React.Component {
       <div className="panel-welcome" id="section-2">
         <div className="avatar-section">
           <img
-            alt="avatar"
             src={person.avatarUrl() ? person.avatarUrl() : avatarFallbackImage}
             className="img-rounded avatar"
             id="avatar-image"
+            alt="avatar"
           />
         </div>
         <h1>
