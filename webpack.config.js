@@ -42,15 +42,15 @@ module.exports = {
   module: {
     rules: [
       { test: /\.json$/, use: 'json-loader' },
-      { enforce: 'pre', test: /\.js$/, loader: 'eslint-loader', exclude: /node_modules/ },
-      { enforce: 'pre', test: /\.jsx$/, loader: 'eslint-loader', exclude: /node_modules/ },
-      { test: /\.js$/, loader: 'babel-loader', exclude: /node_modules/ },
-      { test: /\.jsx$/, loader: 'babel-loader', exclude: /node_modules/ },
+      { enforce: 'pre', test: /\.js$/, use: 'eslint-loader', exclude: /node_modules/ },
+      { enforce: 'pre', test: /\.jsx$/, use: 'eslint-loader', exclude: /node_modules/ },
+      { test: /\.js$/, use: 'babel-loader', exclude: /node_modules/ },
+      { test: /\.jsx$/, use: 'babel-loader', exclude: /node_modules/ },
       {
         test: /\.(eot|woff|woff2|ttf|svg|png|jpe?g|gif)(\?\S*)?$/,
-        loader: 'file-loader!url-loader',
+        use: 'file-loader!url-loader',
       },
-      { test: /\.css$/, loader: 'style-loader!css-loader' },
+      { test: /\.scss$/, use: ['style-loader', 'css-loader', 'sass-loader'] },
     ],
   },
   plugins: [HtmlWebpackPluginConfig, ManifestAssetPlugin, IconAssetPlugin],

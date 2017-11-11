@@ -1,3 +1,5 @@
+@import "bootstrap/bootstrap";
+
 /* Globals */
 a,
 a:focus,
@@ -21,13 +23,13 @@ html {
 }
 
 .landing-heading {
-  font-family: 'Source Code Pro', monospace;
+  font-family: "Source Code Pro", monospace;
   font-weight: 400;
 }
 
 /* Buttons */
 .btn {
-  font-family: 'Source Code Pro', monospace;
+  font-family: "Source Code Pro", monospace;
   padding: 0.5625rem 2.5rem;
   font-size: 0.8125rem;
   font-weight: 400;
@@ -104,7 +106,7 @@ html {
 /* Home button */
 .btn-home-hello {
   position: absolute;
-  font-family: 'Source Code Pro', monospace;
+  font-family: "Source Code Pro", monospace;
   font-size: 11px;
   font-weight: 400;
   color: rgba(255, 255, 255, 0.85);
