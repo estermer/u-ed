@@ -1,12 +1,4 @@
-const webpack = require('webpack');
 const path = require('path');
-// const merge = require('webpack-merge');
-
-const definePlugin = new webpack.DefinePlugin({
-  __DEV__: JSON.stringify(JSON.parse(process.env.BUILD_DEV || 'true')),
-  __PRERELEASE__: JSON.stringify(JSON.parse(process.env.BUILD_PRERELEASE || 'false')),
-  __PRODUCTION__: JSON.stringify(JSON.parse(process.env.NODE_ENV === 'production' || 'false')),
-});
 
 // copy manifest.json to the path: 'public/build'
 // this will allow for the authRequest to see the file at www.example.com/manifest.json
@@ -50,7 +42,6 @@ const config = {
   },
   module: {
     rules: [
-      { test: /\.json$/, use: 'json-loader' },
       { enforce: 'pre', test: /\.js$/, use: 'eslint-loader', exclude: /node_modules/ },
       { enforce: 'pre', test: /\.jsx$/, use: 'eslint-loader', exclude: /node_modules/ },
       { test: /\.js$/, use: 'babel-loader', exclude: /node_modules/ },
@@ -62,23 +53,7 @@ const config = {
       { test: /\.scss$/, use: ['style-loader', 'css-loader', 'sass-loader'] },
     ],
   },
-  plugins: [definePlugin, HtmlWebpackPluginConfig, ManifestAssetPlugin, IconAssetPlugin],
+  plugins: [HtmlWebpackPluginConfig, ManifestAssetPlugin, IconAssetPlugin],
 };
-
-// if (process.env.NODE_ENV === 'production') {
-//   config = merge(config, {
-//     plugins: [
-//       new webpack.DefinePlugin({
-//         'process.env': {
-//           NODE_ENV: JSON.stringify('production'),
-//         },
-//       }),
-//       new webpack.optimize.DedupePlugin(),
-//       new webpack.optimize.OccurrenceOrderPlugin(),
-//       new webpack.optimize.UglifyJsPlugin({ compress: { warnings: false } }),
-//     ],
-//     loaders: [{ test: /redux-logger/, loader: 'null' }],
-//   });
-// }
 
 module.exports = config;
