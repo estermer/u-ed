@@ -1,6 +1,6 @@
 const webpack = require('webpack');
 const path = require('path');
-const merge = require('webpack-merge');
+// const merge = require('webpack-merge');
 
 const definePlugin = new webpack.DefinePlugin({
   __DEV__: JSON.stringify(JSON.parse(process.env.BUILD_DEV || 'true')),
@@ -27,7 +27,7 @@ const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
   inject: 'body',
 });
 
-let config = {
+const config = {
   entry: './src/index.jsx',
   target: 'web',
   output: {
@@ -65,20 +65,20 @@ let config = {
   plugins: [definePlugin, HtmlWebpackPluginConfig, ManifestAssetPlugin, IconAssetPlugin],
 };
 
-if (process.env.NODE_ENV === 'production') {
-  config = merge(config, {
-    plugins: [
-      new webpack.DefinePlugin({
-        'process.env': {
-          NODE_ENV: JSON.stringify('production'),
-        },
-      }),
-      new webpack.optimize.DedupePlugin(),
-      new webpack.optimize.OccurrenceOrderPlugin(),
-      new webpack.optimize.UglifyJsPlugin({ compress: { warnings: false } }),
-    ],
-    loaders: [{ test: /redux-logger/, loader: 'null' }],
-  });
-}
+// if (process.env.NODE_ENV === 'production') {
+//   config = merge(config, {
+//     plugins: [
+//       new webpack.DefinePlugin({
+//         'process.env': {
+//           NODE_ENV: JSON.stringify('production'),
+//         },
+//       }),
+//       new webpack.optimize.DedupePlugin(),
+//       new webpack.optimize.OccurrenceOrderPlugin(),
+//       new webpack.optimize.UglifyJsPlugin({ compress: { warnings: false } }),
+//     ],
+//     loaders: [{ test: /redux-logger/, loader: 'null' }],
+//   });
+// }
 
 module.exports = config;
