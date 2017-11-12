@@ -76,10 +76,17 @@
   },
   "dependencies": {
     "blockstack": "^0.13.4",
+    "es6-promise": "^4.1.1",
+    "history": "^4.7.2",
     "prop-types": "^15.6.0",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
+    "react-redux": "^5.0.6",
+    "react-router": "^4.2.0",
+    "react-router-redux": "^4.0.8",
     "redux": "^3.7.2",
-    "redux-logger": "^3.0.6"
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.2.0",
+    "store": "^2.0.12"
   }
 }
