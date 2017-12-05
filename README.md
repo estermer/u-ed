@@ -21,7 +21,7 @@ the necessary skills for employment.
 
 2. High cost.
 
-Higher education because of subsidies for students and a culture pushing college for employment has
+Subsidies for students and a culture pushing college for employment has
 created a distorted market and increased the cost of college dramatically.
 
 In just a generation, college went from being payed for by savings and summer jobs to a mini mortgage.
@@ -37,5 +37,5 @@ that they can show to employers. This way the emphasis is on the students skills
 jumping through the hoops of the school. Also students are free to choose alternative methods of education
 such as online coursework to further build their portfolio.
 
-This increased mobility of education will create better competition amongst school and ultimately reduce costs
+This increased mobility of education will create better competition among schools and ultimately reduce costs
 and take the emphasis off of only a single method of education.
