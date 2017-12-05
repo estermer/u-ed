@@ -1,4 +1,4 @@
-# Upskill
+# UpSkill
 
 With a new decentralized internet on the horizon through [Blockstack](http://blockstack.org),
 there is now a way to bring the power of data back into the hands of users.
