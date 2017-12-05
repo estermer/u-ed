@@ -1,15 +1,17 @@
 {
-  "name": "hello-blockstack",
+  "name": "upskill",
   "version": "0.0.0",
-  "description": "A simple Blockstack app using ReactJS",
+  "description": "Decentralized Skills Portfolio",
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server",
     "start-prod": "webpack-dev-server NODE_ENV=production",
     "build": "webpack -p",
     "lint": "eslint src eslint \"src/**/*.{js,jsx}\"",
-    "test": "mocha --watch -r jsdom-global/register --compilers js:babel-core/register 'src/**/__tests__/*.jsx'",
-    "test-once": "mocha -r jsdom-global/register --compilers js:babel-core/register 'src/**/__tests__/*.jsx'"
+    "test":
+      "mocha --watch -r jsdom-global/register --compilers js:babel-core/register 'src/**/__tests__/*.jsx'",
+    "test-once":
+      "mocha -r jsdom-global/register --compilers js:babel-core/register 'src/**/__tests__/*.jsx'"
   },
   "repository": {
     "type": "git",
