@@ -8,10 +8,8 @@
     "start-prod": "webpack-dev-server NODE_ENV=production",
     "build": "webpack -p",
     "lint": "eslint src eslint \"src/**/*.{js,jsx}\"",
-    "test":
-      "mocha --watch -r jsdom-global/register --compilers js:babel-core/register 'src/**/__tests__/*.jsx'",
-    "test-once":
-      "mocha -r jsdom-global/register --compilers js:babel-core/register 'src/**/__tests__/*.jsx'"
+    "test": "mocha --watch -r jsdom-global/register --compilers js:babel-core/register 'src/**/__tests__/*.jsx'",
+    "test-once": "mocha -r jsdom-global/register --compilers js:babel-core/register 'src/**/__tests__/*.jsx'"
   },
   "repository": {
     "type": "git",
@@ -77,17 +75,18 @@
     "yargs": "^10.0.3"
   },
   "dependencies": {
-    "blockstack": "^0.13.4",
+    "babel-polyfill": "^6.26.0",
+    "blockstack": "^0.13.7",
     "es6-promise": "^4.1.1",
     "history": "^4.7.2",
-    "prop-types": "^15.6.0",
-    "react": "^15.5.4",
-    "react-dom": "^15.5.4",
-    "react-redux": "^5.0.6",
-    "react-router": "^4.2.0",
-    "react-router-redux": "^4.0.8",
+    "prop-types": "~15.5.10",
+    "react": "~15.4.2",
+    "react-dom": "~15.4.2",
+    "react-redux": "~4.4.8",
+    "react-router": "~2.8.1",
+    "react-router-redux": "~4.0.8",
     "redux": "^3.7.2",
-    "redux-logger": "^3.0.6",
+    "redux-logger": "^2.6.1",
     "redux-thunk": "^2.2.0",
     "store": "^2.0.12"
   }

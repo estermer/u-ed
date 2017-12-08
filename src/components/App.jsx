@@ -1,17 +1,17 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-import {
-  isSignInPending,
-  isUserSignedIn,
-  redirectToSignIn,
-  handlePendingSignIn,
-  signUserOut,
-} from 'blockstack';
-
-import Profile from './Profile';
-import Signin from './Signin';
+import { isSignInPending, handlePendingSignIn } from 'blockstack';
 
 export default class App extends React.Component {
+  static propTypes = {
+    children: PropTypes.node,
+  };
+
+  static defaultProps = {
+    children: null,
+  };
+
   componentWillMount() {
     if (isSignInPending()) {
       handlePendingSignIn().then(() => {
@@ -20,26 +20,11 @@ export default class App extends React.Component {
     }
   }
 
-  handleSignIn = e => {
-    e.preventDefault();
-    redirectToSignIn();
-  };
-
-  handleSignOut = e => {
-    e.preventDefault();
-    signUserOut(window.location.origin);
-  };
-
   render() {
+    const { children } = this.props;
     return (
       <div className="site-wrapper">
-        <div className="site-wrapper-inner">
-          {!isUserSignedIn() ? (
-            <Signin handleSignIn={this.handleSignIn} />
-          ) : (
-            <Profile handleSignOut={this.handleSignOut} />
-          )}
-        </div>
+        <div className="site-wrapper-inner">{children}</div>
       </div>
     );
   }

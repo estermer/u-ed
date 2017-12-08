@@ -1,4 +1,7 @@
+const webpack = require('webpack');
 const path = require('path');
+
+const SRC_BASE = path.resolve(__dirname, 'src');
 
 // copy manifest.json to the path: 'public/build'
 // this will allow for the authRequest to see the file at www.example.com/manifest.json
@@ -11,6 +14,12 @@ const IconAssetPlugin = new CopyWebpackPlugin([
   { from: 'src/images/icon-192x192.png', to: 'icon-192x192.png' },
 ]);
 
+const CommonsPlugin = new webpack.optimize.CommonsChunkPlugin({
+  name: 'vendor',
+  filename: 'vendor.js',
+  children: true,
+});
+
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
@@ -20,7 +29,10 @@ const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
 });
 
 const config = {
-  entry: './src/index.jsx',
+  entry: {
+    main: path.resolve(SRC_BASE, 'index'),
+    vendor: ['babel-polyfill', 'react', 'redux'],
+  },
   target: 'web',
   output: {
     path: path.resolve('public/build'),
@@ -53,7 +65,7 @@ const config = {
       { test: /\.scss$/, use: ['style-loader', 'css-loader', 'sass-loader'] },
     ],
   },
-  plugins: [HtmlWebpackPluginConfig, ManifestAssetPlugin, IconAssetPlugin],
+  plugins: [HtmlWebpackPluginConfig, CommonsPlugin, ManifestAssetPlugin, IconAssetPlugin],
 };
 
 module.exports = config;

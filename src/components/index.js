@@ -1,4 +1,3 @@
 export App from './App';
-export Profile from './Profile';
-export Signin from './Signin';
+export HomePage from './HomePage';
 export NotFound from './NotFound';
