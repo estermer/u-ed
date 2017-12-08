@@ -1,0 +1,60 @@
+/* Containers */
+
+.container-xs {
+  max-width: 440px;
+}
+.container-sm {
+  max-width: 540px;
+}
+.container-md {
+  max-width: 720px;
+}
+.container-primary {
+  max-width: 760px;
+}
+.container-lg {
+  max-width: 960px;
+}
+.container-xl {
+  max-width: 1140px;
+}
+.sectionWrap {
+  padding: 60px 23px;
+}
+.container-box {
+  padding: 20px 15px;
+  border: 1px solid #f0f0f0;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+}
+section {
+  word-break: break-word;
+}
+.section-stats {
+  position: relative;
+  -webkit-box-shadow: 0 -10px 20px rgba(0, 0, 0, 0.08), 0 0 0 rgba(0, 0, 0, 0.08);
+  box-shadow: 0 -10px 20px rgba(0, 0, 0, 0.08), 0 0 0 rgba(0, 0, 0, 0.08);
+}
+.blog-post {
+  padding: 60px 15px;
+}
+section > div.container.col-centered.blog-post {
+  padding: 0 !important;
+}
+section > div.container.col-centered.blog-post > div.container {
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+}
+section > div.container.col-centered.blog-post > div.container > div.post-content > div > p {
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+.author {
+  margin-bottom: 35px;
+}
+.container-card {
+  max-width: 440px;
+  margin-right: auto;
+  margin-left: auto;
+}

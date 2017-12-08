@@ -41,7 +41,7 @@ export default class Profile extends React.Component {
         <div className="avatar-section">
           <img
             src={person.avatarUrl() ? person.avatarUrl() : avatarFallbackImage}
-            className="img-rounded avatar"
+            className="img-rounded small"
             id="avatar-image"
             alt="avatar"
           />

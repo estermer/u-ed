@@ -18,14 +18,12 @@ export default class HomePage extends React.Component {
 
   render() {
     return (
-      <div className="site-wrapper">
-        <div className="site-wrapper-inner">
-          {!isUserSignedIn() ? (
-            <Signin handleSignIn={this.handleSignIn} />
-          ) : (
-            <Profile handleSignOut={this.handleSignOut} />
-          )}
-        </div>
+      <div>
+        {!isUserSignedIn() ? (
+          <Signin handleSignIn={this.handleSignIn} />
+        ) : (
+          <Profile handleSignOut={this.handleSignOut} />
+        )}
       </div>
     );
   }

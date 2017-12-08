@@ -1,0 +1,49 @@
+/* Avatar */
+.img-circle {
+  border-radius: 100%;
+  display: inline-block;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  background-position: center;
+
+  &.large {
+    height: 300px;
+  }
+
+  &.medium {
+    height: 150px;
+  }
+
+  &.small {
+    height: 75px;
+  }
+
+  &.tiny {
+    height: 25px;
+  }
+}
+
+.img-rounded {
+  border-radius: 10%;
+  display: inline-block;
+  -webkit-border-radius: 10%;
+  -moz-border-radius: 10%;
+  background-position: center;
+
+  &.large {
+    height: 300px;
+  }
+
+  &.medium {
+    height: 150px;
+  }
+
+  &.small {
+    height: 75px;
+  }
+
+  &.tiny {
+    height: 25px;
+  }
+}
+/* End Avatar */
