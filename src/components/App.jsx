@@ -6,12 +6,14 @@ import { isUserSignedIn, isSignInPending, handlePendingSignIn } from 'blockstack
 import { getUserData } from '../actions/user';
 
 import NavBar from './NavBar';
+import SideBar from './SideBar';
 import Signin from './Signin';
 
 export class App extends React.Component {
   static propTypes = {
     children: PropTypes.node,
     getUserDataAction: PropTypes.func.isRequired,
+    pathname: PropTypes.string.isRequired,
     user: PropTypes.object.isRequired,
   };
 
@@ -31,10 +33,12 @@ export class App extends React.Component {
   }
 
   renderTemplate = () => {
-    const { children, user } = this.props;
+    const { children, pathname, user } = this.props;
+    const path = pathname.split('/').slice(1)[0];
     return (
       <div>
         <NavBar user={user} />
+        <SideBar highlight={path} />
         {children}
       </div>
     );
@@ -46,8 +50,9 @@ export class App extends React.Component {
 }
 
 const mapStateToProps = state => {
-  const { user } = state;
-  return { user };
+  const { user, routing } = state;
+  const { pathname } = routing.locationBeforeTransitions;
+  return { pathname, user };
 };
 
 export default connect(mapStateToProps, {
