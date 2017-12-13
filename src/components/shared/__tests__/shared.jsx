@@ -21,6 +21,7 @@ describe('Shared Components', () => {
       const navBrand = $root.find('.navbar-brand');
       expect($root.length).to.be.least(1);
       expect(navBrand.length).to.be.least(1);
+      expect(navBrand.text()).to.equal(' UpSkill');
       expect($root.find('.navbar-nav').length).to.be.least(1);
     });
 
@@ -46,6 +47,7 @@ describe('Shared Components', () => {
     it('should render the Page Content Wrapper component', () => {
       const $root = $(<PageContentWrapper content={content} header={header} />).shallowRender();
       expect($root.length).to.be.least(1);
+      expect($root.find('h2').text()).to.equal('Test');
     });
   });
 
