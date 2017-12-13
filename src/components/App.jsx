@@ -38,8 +38,12 @@ export class App extends React.Component {
     return (
       <div>
         <NavBar user={user} />
-        <SideBar highlight={path} />
-        {children}
+        <div className="content-wrapper">
+          <div className="sidebar-wrapper">
+            <SideBar highlight={path} />
+          </div>
+          <div className="page-content-wrapper">{children}</div>
+        </div>
       </div>
     );
   };

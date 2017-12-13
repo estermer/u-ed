@@ -1,0 +1,19 @@
+.sidebar-wrapper {
+  z-index: 10;
+  position: fixed;
+  left: $width-sidebar;
+  width: 0;
+  height: 100%;
+  margin-left: -$width-sidebar;
+  overflow-y: auto;
+  @extend .transition-default;
+
+  .sidebar-nav {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    margin: 0;
+    padding: 1rem 0.75rem 0;
+    list-style: none;
+  }
+}

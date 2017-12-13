@@ -83,20 +83,28 @@ export default class NavBar extends React.Component {
           >
             <img
               src={user.avatarUrl()}
-              className="img-rounded tiny d-inline-block align-top"
+              className="img-circle tiny d-inline-block align-top"
               id="avatar-image"
               alt="avatar"
-            />
+            />&nbsp;
+            {user.name()}
           </button>
           <div className={`dropdown-menu ${showUserMenu ? 'show' : ''}`}>
-            <Link className="dropdown-item nav-link" to="/" onClick={this.closeUserMenu}>
-              Home <span className="sr-only">(current)</span>
+            <Link
+              className="dropdown-item nav-link"
+              target="_blank"
+              to="http://localhost:8888/profiles"
+              onClick={this.closeUserMenu}
+            >
+              Profile
             </Link>
-            <Link className="dropdown-item nav-link" to="/" onClick={this.closeUserMenu}>
-              Features
-            </Link>
-            <Link className="dropdown-item nav-link" to="/" onClick={this.closeUserMenu}>
-              Pricing
+            <Link
+              className="dropdown-item nav-link"
+              target="_blank"
+              to="http://www.blockstack.org"
+              onClick={this.closeUserMenu}
+            >
+              Blockstack
             </Link>
             <div className="dropdown-divider" />
             <button

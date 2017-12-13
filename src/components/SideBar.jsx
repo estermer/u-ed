@@ -30,6 +30,10 @@ export default class SideBar extends React.Component {
   };
 
   render() {
-    return <nav className="nav nav-pills flex-column">{links.map(this.renderLinks)}</nav>;
+    return (
+      <div className="sidebar-nav">
+        <nav className="nav nav-pills flex-column">{links.map(this.renderLinks)}</nav>
+      </div>
+    );
   }
 }

@@ -1,0 +1,9 @@
+$defaultSpeed: 0.2s;
+$transition-settings: all $defaultSpeed ease; // was 0.5s testing transition speeds
+
+.transition-default {
+  -webkit-transition: $transition-settings;
+  -moz-transition: $transition-settings;
+  -o-transition: $transition-settings;
+  transition: $transition-settings;
+}
