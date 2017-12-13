@@ -1,7 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { isSignInPending, handlePendingSignIn } from 'blockstack';
+import { isUserSignedIn, isSignInPending, handlePendingSignIn } from 'blockstack';
+
+import NavBar from './NavBar';
+import Signin from './Signin';
 
 export default class App extends React.Component {
   static propTypes = {
@@ -20,12 +23,17 @@ export default class App extends React.Component {
     }
   }
 
-  render() {
+  renderTemplate = () => {
     const { children } = this.props;
     return (
-      <div className="site-wrapper">
-        <div className="site-wrapper-inner">{children}</div>
+      <div>
+        <NavBar />
+        {children}
       </div>
     );
+  };
+
+  render() {
+    return <div>{!isUserSignedIn() ? <Signin /> : this.renderTemplate()}</div>;
   }
 }

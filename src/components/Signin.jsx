@@ -1,16 +1,13 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
+
+import { redirectToSignIn } from 'blockstack';
 
 export default class Signin extends React.Component {
-  static propTypes = {
-    handleSignIn: PropTypes.func.isRequired,
+  handleSignIn = e => {
+    e.preventDefault();
+    redirectToSignIn();
   };
-
-  constructor(props) {
-    super(props);
-    const { handleSignIn } = this.props;
-    this.handleSignIn = handleSignIn.bind(this);
-  }
 
   render() {
     return (

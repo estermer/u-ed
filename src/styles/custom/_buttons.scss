@@ -1,0 +1,20 @@
+.btn-icon,
+.link-button {
+  color: blue; //$link-color;
+  background: 0;
+  border: none;
+
+  &:hover {
+    color: dark-blue; //$link-hover-color;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &[disabled] {
+    color: gray; //$gray-light;
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}

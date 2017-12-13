@@ -6,6 +6,9 @@ const SRC_BASE = path.resolve(__dirname, 'src');
 // copy manifest.json to the path: 'public/build'
 // this will allow for the authRequest to see the file at www.example.com/manifest.json
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+
+const cssOutput = new ExtractTextPlugin({ filename: 'style.css', allChunks: true });
 
 const ManifestAssetPlugin = new CopyWebpackPlugin([
   { from: 'src/assets/manifest.json', to: 'manifest.json' },
@@ -60,12 +63,24 @@ const config = {
       { test: /\.jsx$/, use: 'babel-loader', exclude: /node_modules/ },
       {
         test: /\.(eot|woff|woff2|ttf|svg|png|jpe?g|gif)(\?\S*)?$/,
-        use: 'file-loader!url-loader',
+        use: 'file-loader',
       },
-      { test: /\.scss$/, use: ['style-loader', 'css-loader', 'sass-loader'] },
+      {
+        test: /\.scss$/,
+        loader: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: ['css-loader', 'sass-loader'],
+        }),
+      },
     ],
   },
-  plugins: [HtmlWebpackPluginConfig, CommonsPlugin, ManifestAssetPlugin, IconAssetPlugin],
+  plugins: [
+    HtmlWebpackPluginConfig,
+    CommonsPlugin,
+    ManifestAssetPlugin,
+    IconAssetPlugin,
+    cssOutput,
+  ],
 };
 
 module.exports = config;
