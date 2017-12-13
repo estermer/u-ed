@@ -115,8 +115,9 @@ export default class NavBar extends React.Component {
   render() {
     return (
       <nav className="navbar navbar-expand-lg navbar-light bg-faded">
-        <div className="container">
+        <div className="container-fluid">
           <Link className="navbar-brand" href="/">
+            <i className="fa fa-graduation-cap" aria-hidden="true" />&nbsp;
             {/* <img src="/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt=""> */}
             UpSkill
           </Link>
