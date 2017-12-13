@@ -9,14 +9,27 @@ import NotFound from '../NotFound';
 import PageContentWrapper from '../PageContentWrapper';
 import SideBar from '../SideBar';
 
+import { avatarFallbackImage, defaultUser } from '../../../reducers/user';
+
 chai.use(dirtyChai);
 
 describe('Shared Components', () => {
   describe('Nav Bar', () => {
-    const user = new Person();
+    const user = new Person(defaultUser);
     it('should render the NavBar component', () => {
       const $root = $(<NavBar user={user} />).shallowRender();
+      const navBrand = $root.find('.navbar-brand');
       expect($root.length).to.be.least(1);
+      expect(navBrand.length).to.be.least(1);
+      expect($root.find('.navbar-nav').length).to.be.least(1);
+    });
+
+    it('avatar image url should be fallback image', () => {
+      expect(user.avatarUrl()).to.equal(avatarFallbackImage);
+    });
+
+    it('user name should be Anonymous', () => {
+      expect(user.name()).to.equal('Anonymous');
     });
   });
 

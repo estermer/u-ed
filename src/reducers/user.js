@@ -1,8 +1,8 @@
 import { Person } from 'blockstack';
 import { actionTypes } from '../actions/user';
 
-const avatarFallbackImage = 'https://s3.amazonaws.com/onename/avatar-placeholder.png';
-const defaultUser = {
+export const avatarFallbackImage = 'https://s3.amazonaws.com/onename/avatar-placeholder.png';
+export const defaultUser = {
   '@context': 'http://schema.org/',
   '@type': 'Person',
   name: 'Anonymous',
