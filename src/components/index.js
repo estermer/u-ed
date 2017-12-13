@@ -1,3 +1,3 @@
 export App from './App';
-export HomePage from './HomePage';
-export NotFound from './NotFound';
+export HomePage from './home/HomePage';
+export NotFound from './shared/NotFound';

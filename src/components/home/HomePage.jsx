@@ -1,6 +1,6 @@
 import React from 'react';
 
-import PageContentWrapper from './PageContentWrapper';
+import PageContentWrapper from '../shared/PageContentWrapper';
 
 const HomePage = () => <PageContentWrapper content={<div />} header="Home" />;
 

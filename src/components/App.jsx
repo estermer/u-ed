@@ -5,8 +5,8 @@ import { isUserSignedIn, isSignInPending, handlePendingSignIn } from 'blockstack
 
 import { getUserData } from '../actions/user';
 
-import NavBar from './NavBar';
-import SideBar from './SideBar';
+import NavBar from './shared/NavBar';
+import SideBar from './shared/SideBar';
 import Signin from './Signin';
 
 export class App extends React.Component {
