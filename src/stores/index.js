@@ -5,7 +5,8 @@ import thunk from 'redux-thunk';
 import createLogger from 'redux-logger';
 
 // Native Reducers
-import authReducer from '../reducers/auth';
+// import authReducer from '../reducers/auth';
+import userReducer from '../reducers/user';
 
 function configureLogger() {
   // bypass logger middleware altogether in test & prod:
@@ -37,7 +38,7 @@ function configureLogger() {
   return createLogger({ logger, collapsed, predicate });
 }
 
-const reducer = combineReducers({ auth: authReducer, routing: routerReducer });
+const reducer = combineReducers({ user: userReducer, routing: routerReducer });
 
 const historyMiddleware = routerMiddleware(browserHistory);
 

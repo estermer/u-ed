@@ -79,6 +79,7 @@
     "blockstack": "^0.13.7",
     "es6-promise": "^4.1.1",
     "history": "^4.7.2",
+    "immutable": "^3.8.2",
     "prop-types": "~15.5.10",
     "react": "~15.4.2",
     "react-dom": "~15.4.2",

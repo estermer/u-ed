@@ -1,29 +1,23 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router';
 
-import { loadUserData, Person, signUserOut } from 'blockstack';
-
-const avatarFallbackImage = 'https://s3.amazonaws.com/onename/avatar-placeholder.png';
+import { signUserOut } from 'blockstack';
 
 export default class NavBar extends React.Component {
+  static propTypes = {
+    user: PropTypes.object.isRequired,
+  };
+
   state = {
-    person: {
-      name() {
-        return 'Anonymous';
-      },
-      avatarUrl() {
-        return avatarFallbackImage;
-      },
-    },
     showUserMenu: false,
     timeoutReference: null,
   };
 
   componentWillMount() {
-    this.setState({
-      person: new Person(loadUserData().profile),
-    });
+    // this.setState({
+    //   person: new Person(loadUserData().profile),
+    // });
   }
 
   getUserMenuClass = showUserMenu => {
@@ -71,7 +65,8 @@ export default class NavBar extends React.Component {
   };
 
   renderUserMenu = () => {
-    const { person, showUserMenu } = this.state;
+    const { user } = this.props;
+    const { showUserMenu } = this.state;
 
     return (
       <ul className="nav navbar-nav">
@@ -87,7 +82,7 @@ export default class NavBar extends React.Component {
             onClick={this.toggleMenu}
           >
             <img
-              src={person.avatarUrl() ? person.avatarUrl() : avatarFallbackImage}
+              src={user.avatarUrl()}
               className="img-rounded tiny d-inline-block align-top"
               id="avatar-image"
               alt="avatar"
